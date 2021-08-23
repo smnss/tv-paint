@@ -1,0 +1,276 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>TV Drawing</title>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+<script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+<link rel="stylesheet" type="text/css" href="canvas.css"/>
+</head>
+
+<body>
+
+  <div>
+
+        <div class="modal-body" id="top-cointainer">
+          <div id="paint">
+          	
+          	<div id="sketch">
+		  		<canvas id="canvas"></canvas>
+		  	</div>
+
+		  	<div id="paint-panel">
+
+    			<div class="btn-group" id="tools">
+        			<button class="btn" type="button" data-divbtn="pencil" title="Pencil">
+          			<img src="./img/Pencil.png"/>
+						
+        			</button>
+
+        			<button class="btn" type="button" data-divbtn="line" title="Line">
+          				<img src="./img/Line.png"/>
+						
+        			</button>
+
+					<button class="btn" type="button" data-divbtn="eraser" title="Eraser">
+          				<img src="./img/Eraser.png"/>
+						
+        			</button>
+
+        			<button class="btn" type="button" data-divbtn="square" title="Rectangle">
+          				<img src="./img/Rectangle.png"/>
+						
+        			</button>
+
+        			<button class="btn" type="button" data-divbtn="fill" title="Fill">
+          				<img src="./img/Fill-color.png"/>	
+        			</button>
+
+        			<button class="btn" type="button" data-divbtn="circle" title="Circle">
+          				<img src="./img/Circle.png"/>
+        			</button>
+
+        			<button class="btn" type="button" data-divbtn="ellipse" title="Ellipse">
+          				<img src="./img/Ellipse.png"/>
+						
+        			</button>
+					
+					<button class="btn" type="button" data-divbtn="rectangle" title="Rounded rectangle">
+          				<img src="./img/Rounded-rectangle.png"/>
+        			</button>
+
+        		</div>
+				
+				<div class="btn-group">
+				<button class="btn" id="undo-tool" type="button" title="Undo">
+          				<img src="./img/undo.png"/>
+        			</button>
+
+        			<button class="btn" id="redo-tool" type="button" title="Redo">
+          				<img src="./img/redo.png"/>
+						
+        			</button>
+					
+					<!-- <button class="btn" id="paint-clear" type="button" title="Clear">
+          				<img src="./img/Rounded-rectangle.png"/>
+        			</button> -->
+					
+					<button class="btn" id="save" type="button" title="Save">
+          				<img src="./img/save.jpg"/>
+        			</button>
+					
+					<button class="btn" type="button">
+          				
+        			</button>
+				</div>
+
+        		<div id="choose-size">
+        		
+        			<div class="radio-group">
+        				<input type="radio" name="size" value="1">fine</div>
+        			<div class="radio-group">
+        				<input type="radio" name="size" value="2" checked="checked">thin</div>
+        			<div class="radio-group"><input type="radio" name="size" value="3">medium</div>
+        			<div class="radio-group"><input type="radio" name="size" value="4">thick</div>
+        		</div>
+				
+				
+		  
+		  
+		  		<div id="clipart">
+        <div class="img"><img src="./img/apple.png"/></div>
+        <div class="img"><img src="./img/flower.png"/></div>
+        <div class="img"><img src="./img/guava.png"/></div>
+        <div class="img"><img src="./img/pappaya.png"/></div>
+        <div class="img"><img src="./img/pineapple.png"/></div>
+        <div class="img"><img src="./img/table.png"/></div>
+        <div class="img"><img src="./img/ice-cream-1.png"/></div>
+        <div class="img"><img src="./img/ice-cream-2.png"/></div>
+        <div class="img"><img src="./img/ice-cream-3.png"/></div>
+
+      </div>
+
+
+        	</div>	
+			
+          	</div>	
+		  </div> 
+
+        </div>
+
+        <div class="modal-footer" id="bottom-container">
+		  <div id="color-panel">
+
+        		<button class="btn" type="button" data-color="#420420" style="background-color:#420420">
+        		</button>
+        		<button class="btn" type="button" data-color="#40e0d0" style="background-color:#40e0d0">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#0000ff" style="background-color:#0000ff">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#afeeee" style="background-color:#afeeee">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#d3ffce" style="background-color:#d3ffce">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#c6e2ff" style="background-color:#c6e2ff">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#b0e0e6" style="background-color:#b0e0e6">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#faebd7" style="background-color:#faebd7">	
+        		</button>                 
+        		<button class="btn" type="button" data-color="#fa8072"  style="background-color:#fa8072">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#003366" style="background-color:#003366">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#ffb6c1" style="background-color:#ffb6c1">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#ffff00" style="background-color:#ffff00">	
+				</button>
+        		<button class="btn" type="button" data-color="#800000" style="background-color:#800000">
+        		</button>
+				<button class="btn" type="button" data-color="#7fffd4" style="background-color:#7fffd4">
+        		</button>
+        		<button class="btn" type="button" data-color="#800080" style="background-color:#800080">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#ff0000" style="background-color:#ff0000">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#eeeeee" style="background-color:#eeeeee">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#20b2aa" style="background-color:#20b2aa">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#333333" style="background-color:#333333">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#ac25e2" style="background-color:#ac25e2">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#ff6666" style="background-color:#ff6666">	
+        		</button>   
+				<button class="btn" type="button" data-color="#ffdab9" style="background-color:#ffdab9">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#4ca3dd" style="background-color:#4ca3dd">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#c0d6e4" style="background-color:#c0d6e4">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#008000" style="background-color:#008000">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#cbbeb5" style="background-color:#cbbeb5">	
+        		</button>                   
+        		<button class="btn" type="button" data-color="#f6546a"  style="background-color:#f6546a">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#660066" style="background-color:#660066">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#b6fcd5" style="background-color:#b6fcd5">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#00ced1" style="background-color:#00ced1">	
+				</button>
+        		<button class="btn" type="button" data-color="#daa520" style="background-color:#daa520">
+        		</button>
+				<button class="btn" type="button" data-color="#0e2f44" style="background-color:#0e2f44">
+        		</button>
+        		<button class="btn" type="button" data-color="#808080" style="background-color:#808080">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#088da5" style="background-color:#088da5">	
+        		</button>          				      
+        		<button class="btn" type="button" data-color="#8b0000"  style="background-color:#8b0000">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#f5f5f5" style="background-color:#f5f5f5">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#6897bb" style="background-color:#6897bb">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#000080" style="background-color:#000080">	
+				</button>
+        		<button class="btn" type="button" data-color="#101010" style="background-color:#101010">
+				<img src='img/tick.png' width='25'>
+        		</button>
+				<button class="btn" type="button" data-color="#f5f5dc" style="background-color:#f5f5dc">
+        		</button>
+        		<button class="btn" type="button" data-color="#ffff66" style="background-color:#ffff66">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#0a75ad" style="background-color:#0a75ad">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#81d8d0" style="background-color:#81d8d0">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#e9276c" style="background-color:#e9276c">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#89b475" style="background-color:#89b475">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#09f3b3" style="background-color:#09f3b3">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#228d2a" style="background-color:#228d2a">	
+        		</button>                
+        		<button class="btn" type="button" data-color="#89c1e0"  style="background-color:#89c1e0">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#cdb9b4" style="background-color:#cdb9b4">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#da4423" style="background-color:#da4423">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#9f86da" style="background-color:#9f86da">	
+				</button>
+        		<button class="btn" type="button" data-color="#abb1cf" style="background-color:#abb1cf">
+        		</button>
+				<button class="btn" type="button" data-color="#356e03" style="background-color:#356e03">	
+        		</button>     
+        		<button class="btn" type="button" data-color="#dc8ef5" style="background-color:#dc8ef5">	
+				</button>
+        		<button class="btn" type="button" data-color="#53b3b9" style="background-color:#53b3b9">
+        		</button>
+				<button class="btn" type="button" data-color="#8a0b5b" style="background-color:#8a0b5b">
+        		</button>
+        		<button class="btn" type="button" data-color="#140dc6" style="background-color:#140dc6">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#9c9107" style="background-color:#9c9107">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#33daca" style="background-color:#33daca">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#4a7c8d" style="background-color:#4a7c8d">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#e073b9" style="background-color:#e073b9">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#0a311a" style="background-color:#0a311a">	
+				</button>     
+        		<button class="btn" type="button" data-color="#267b65" style="background-color:#267b65">	
+				</button>
+        		<button class="btn" type="button" data-color="#c65138" style="background-color:#c65138">
+        		</button>
+				<button class="btn" type="button" data-color="#0d9a55" style="background-color:#0d9a55">
+        		</button>
+        		<button class="btn" type="button" data-color="#d63915" style="background-color:#d63915">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#86fc4f" style="background-color:#86fc4f">	
+        		</button>          
+        		<button class="btn" type="button" data-color="#707757" style="background-color:#707757">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#e0575a" style="background-color:#e0575a">	
+        		</button>          
+        		<button class="btn" type="button"  data-color="#99294d" style="background-color:#99294d">	
+
+          </div>
+
+
+        </div>  
+        
+      </div>
+
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="canvas.js" type="text/javascript"></script>
+</body>
+</html>
